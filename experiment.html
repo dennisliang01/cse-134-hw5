@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dennis Liang Portfolio Website</title>
+        <link rel="stylesheet" href="./style.css">
+        <!-- Basic border styling for HTML tag experimentation and demo -->
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            }
+
+            .testDiv {
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- Navbar section -->
+            <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="workExperience.html">Work Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+                <li><a href="contactMe.html">Contact Me</a></li>
+                <li><a href="experiment.html">Experiment</a></li>
+            </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Experiment Page</h2>
+            <!-- Div tag demo -->
+            <section>
+                <h3>Div Tag</h3>
+                <div class="testDiv">
+                    <h4>Heading for div class</h4>
+                    <p>Example text for div calss</p>
+                </div>
+            </section>
+            <!-- Span tag demo showing inline usage -->
+            <section>
+                <h3>Span Tag</h3>
+                <p>This is an example of <span style="font-size: 30pt;">span tag</span></p>
+            </section>
+            <!-- Pre tag demo showing space preservation -->
+            <section>
+                <h3>Pre Tag</h3>
+                <pre>
+                    This is my attempt of using the pre tag which should
+                    preserve spaces     and other things.
+                </pre>
+            </section>
+            <!-- Aside tag demo showing paragraph usage -->
+            <section>
+                <h3>Aside Tag</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste quod blanditiis dicta modi magni tempore omnis est neque. Temporibus nihil, atque esse libero sit ullam deserunt voluptatum quisquam quis.</p>
+
+                <aside>
+                    <p>Example of the aside tag</p>
+                </aside>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum facere ullam, quidem autem sunt at rerum voluptatum accusamus quasi voluptatibus cupiditate officia quam praesentium repellat aliquam a! Minima, fugit rerum.</p>
+            </section>
+            <!-- Code tag demo showing code format -->
+            <section>
+                <h3>Code Tag</h3>
+                <code>
+                    System.out.println("Hello World")
+                </code>
+            </section>
+            <!-- Picture tag demo showing different media sizing picture adjustment -->
+            <section>
+                <h3>Picture Tag</h3>
+                <picture>
+                    <source media="(min-width:1000px)" srcset="assets/images/bike-pic-1-square.png">
+                    <source media="(min-width:500px)" srcset="assets/images/bike-pic-1-square.png">
+
+                    <img src="assets/images/bike-pic-1-square.png" alt="Cycling Picture Square" width=300>
+                  </picture>
+            </section>
+            <!-- Audio tag demo showing embedded mp3 file -->
+            <section>
+                <h3>Audio Tag</h3>
+                <audio controls>
+                    <source src="assets/audio/piano.mp3" type="audio/mpeg">
+                </audio>
+            </section>
+            <!-- Video tag demo showing embedded mp4 file -->
+            <section>
+                <h3>Video Tag</h3>
+                <video width="320" height="240" controls>
+                    <source src="assets/video/nightSky.mp4" type="video/mp4">
+                </video>
+            </section>
+            <!-- Figure demo showing pciture and caption -->
+            <section>
+                <h3>Figure and Figcaption Tag</h3>
+                <figure>
+                    <img src="assets/images/fallenStar.jpg" alt="UCSD Fallen Star Building Image" width=300>
+                    <figcaption>Fig.1 - Fallen Star, UCSD Stuart Collection.</figcaption>
+                </figure>
+            </section>  
+            <!-- Table demo shoing how to construct and lable a table -->
+            <section>
+                <h3>Table and Caption Tag</h3>
+                <table>
+                    <!-- Also includes caption to see how caption work with table -->
+                    <caption>Days in Month</caption>
+                    <colgroup>
+                    <!-- col tag starts from here -->
+                    <col span="1" style="background-color: grey">
+                    </colgroup>
+                    <tr>
+                        <th colspan="1">Month</th>
+                        <th colspan="1">Day in Month</th>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>28/29</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>31</td>
+                    </tr>
+                </table>
+            </section>
+            <!-- Simple demo of button tag without JS linking -->
+            <section>
+                <h3>Button Tag</h3>
+                <button type="button">Click Me!</button>
+            </section>
+            <!-- Datalist demo showing selection menu -->
+            <section>
+                <h3>Datalist Tag</h3>
+                <label for="day-of-week-choice">Choose your favorite day:</label>
+                <input list="day-of-week" id="day-of-week-choice" name="day-of-week-choice">
+                <datalist id="day-of-week">
+                    <option value="Monday"></option>
+                    <option value="Tuesday"></option>
+                    <option value="Wednesday"></option>
+                    <option value="Thursday"></option>
+                    <option value="Friday"></option>
+                    <option value="Saturday"></option>
+                    <option value="Sunday"></option>
+                </datalist>
+            </section>
+            <!-- Optgroup demo showing option choice grouping -->
+            <section>
+                <h3>Optgroup Tag</h3>
+                <form>
+                    <label for="countries">Favorite Country:</label>
+                    <select name="countries" id="countries">
+                      <optgroup label="Asia">
+                        <option value="china">China</option>
+                        <option value="southKorea">South Korea</option>
+                      </optgroup>
+                      <optgroup label="North America">
+                        <option value="usa">USA</option>
+                        <option value="mexico">Mexico</option>
+                      </optgroup>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                  </form>
+            </section>
+            <!-- Template tag that can be repeated for further usage through JS -->
+            <section>
+                <h3>Template Tag</h3>
+                <template>
+                    <h4>Template Example</h4>
+                    <p>Some exmaple text for template</p>
+                </template>
+            </section>
+            <!-- Canvas tag demoing drawing -->
+            <section>
+                <h3>Canvas Tag</h3>
+                <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+                </canvas>
+                <script>
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                    ctx.stroke();
+                </script>
+            </section>
+            <!-- Inline SVG tag demo showing drawing -->
+            <section>
+                <h3>Inline SVG Tag</h3>
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="5" fill="orange" />
+                  </svg>
+            </section>
+        </main>
+        <!-- Contact info footer section -->
+        <footer>
+        <hr>
+        <h2>Contact Me</h2>
+        <nav>
+            <ul>
+                <li><a href="mailto:dennisliang01@gmail.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/dennisbliang/">LinkedIn</a></li>
+            </ul>
+        </nav>
+        </footer>
+    </body>
+</html>
