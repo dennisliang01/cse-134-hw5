@@ -5,63 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dennis Liang Portfolio Website</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
   </head>
   <body>
     <header>
       <!-- Navbar section -->
-        <nav>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="workExperience.html">Work Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="hobby.html">Hobby</a></li>
-            <li><a href="contactMe.html">Contact Me</a></li>
-            <li><a href="experiment.html">Experiment</a></li>
-          </ul>
+        <nav class="navbar">
+            <ul class="navbar-container">
+                <li class="navbar-item" id="logo-name"><a href="home.html">Dennis Liang</a></li>
+                <li class="navbar-item"><a href="#about-me">About Me</a></li>
+                <li class="navbar-item"><a href="experience.html">Experience</a></li>
+                <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
+                <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
+                <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
+            </ul>
         </nav>
     </header>
     <!-- Main section -->
     <main>
       <!-- Introduction section -->
-      <section>
-        <img src="assets/images/circle.png" alt="Dennis Liang Professional Headshot" width=300>
-        <h1>Dennis Liang</h1>
-        <h3><em>Computer Science</em> Student at UC San Diego</h3>
-        <p>I'm currently a studying computer science at UC San Diego and I'm interested in pursuing a career in the software engineering industry.</p>
+      <section id="intro">
+        <img src="assets/images/circle.png"
+            alt="Dennis Liang Professional Headshot"
+            id="profileImage"
+            width="200px">
+        <div id="intro-description">
+            <p>Hello, I am</p>
+            <h1>Dennis Liang</h1>
+            <h3>Undergraduate <em>Computer Science</em> Student</h3>
+            <p>I am currently a studying computer science at UC San Diego and hope to pursue a career in the software engineering field upon graduation.</p>
+            <i class="fa-brands fa-linkedin"></i>
+            
+        </div>
+        
       </section>
 
       <!-- Section for more in depth about me  -->
-      <section>
-        <hr>
-        <h2>About <i>Me</i></h2>
-        <p>I am an enthusiastic and motivated student currently pursuing a Bachelor of Science degree in Computer Science at the University of California, San Diego. I am dedicated to honing my skills and knowledge in the realm of software development. My passion lies in creating clean, efficient, and innovative solutions through programming, and my proficiency extends to languages such as Java, Python, and C++. I am excited to leverage my technical skills and diverse experiences to excel as a software developer and make meaningful contributions to cutting-edge projects.</p>
+      <section id="about-me">
+        
+        <div id="about-me-description">
+            <h2>About <i>Me</i></h2>
+            <p>I am an enthusiastic and motivated student currently pursuing a Bachelor of Science degree in Computer Science at the University of California, San Diego. I am dedicated to honing my skills and knowledge in the realm of software development. My passion lies in creating clean, efficient, and innovative solutions through programming, and my proficiency extends to languages such as Java, Python, and C++. I am excited to leverage my technical skills and diverse experiences to excel as a software developer and make meaningful contributions to cutting-edge projects.</p>
+        </div>
 
-        <!-- Section that talks about important parts of me -->
-        <img src="assets/images/bike-pic-1-square.png" alt="Cycling Picture" width=200>
-        <details>
-          <summary>Cycling</summary>
-          <p>Cycling text</p>
-        </details>
-
-        <img src="assets/images/uscdAcademics.jpg" alt="UCSD Picture" width=200>
-        <details>
-          <summary>Academics</summary>
-          <p>Academic text</p>
-        </details>
-
-        <img src="assets/images/project.png" alt="Say-It Voice Assistant Picture" width=200>
-        <details>
-          <summary>Projects</summary>
-          <p>Project Text</p>
-        </details>
+        <div id="about-me-parts-1">
+                <!-- Section that talks about important parts of me -->
+            <img src="assets/images/bike-pic-1-square.png" alt="Cycling Picture" 
+            class="about-me-pic" width=200>
+            <details>
+                <summary>Cycling</summary>
+                <p>Cycling is more than a hobby; it's my lifelong passion. I find joy in the wind on my face, the rhythmic pedal strokes, and the sense of freedom on two wheels. Whether I'm navigating city streets, conquering mountain trails, or embarking on long rides, cycling is my escape and source of self-discovery. I'm committed to sustainable transportation and love sharing the cycling experience with others. Join me in this thrilling journey, one pedal revolution at a time.</p>
+            </details>
+        </div>
+        <div id="about-me-parts-2">
+            <img src="assets/images/uscdAcademics.jpg" alt="UCSD Picture" 
+            class="about-me-pic" width=200>
+            <details>
+                <summary>Academics</summary>
+                <p>Being a computer science student at UCSD is an exhilarating journey that constantly pushes the boundaries of my knowledge and problem-solving skills. I thrive on the challenge of tackling complex algorithms, coding, and the ever-evolving tech landscape. It's a world where innovation and creativity meet, and I'm passionate about leveraging technology to shape the future. As a UCSD student, I'm part of a dynamic community that shares my enthusiasm for computer science and encourages exploration and growth. Join me in this exciting adventure of discovery, where we're at the forefront of the digital revolution, one line of code at a time.</p>
+            </details>
+        </div>
+        <div id="about-me-parts-3">
+            <img src="assets/images/project.png" alt="Say-It Voice Assistant Picture" 
+            class="about-me-pic" width=200>
+            <details>
+                <summary>Projects</summary>
+                <p>As part of my CSE 110 Software Engineering course, I along with 5 other students build an ChatGPT voice assitant platform. Using Whisper API, our application serves as a voice median between the user and ChatGPT. User can ask question and send emails through our app. Moreover, each user's chat history is stored in a MongoDB databse accessible through eqach user's username and password.</p>
+            </details>
+        </div>
 
       </section>
     </main>
     <!-- Contact info footer section -->
     <footer>
-      <hr>
-      <h2>Contact Me</h2>
       <nav>
           <ul>
             <li><a href="mailto:dennisliang01@gmail.com">Email</a></li>
