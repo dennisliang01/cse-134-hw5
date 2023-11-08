@@ -1,17 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap'); */
 
 :root {
     --blue: #133A4D;
+    --dark-grey: #2a2a2a;
+    --light-grey: #979797;
+    --bg-off-white: #eeeeee;
+    /* font with fall back font */
     font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
-    border: solid;
+    background-color: var(--bg-off-white, white);
     scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
 }
 
 /* Navbar */
 .navbar {
     overflow: hidden;
-    
 }
 
 .navbar-container {
@@ -20,16 +26,20 @@
     margin: 0;
     padding: 0;
     height: auto;
+    background-color: var(--dark-grey, grey);
 }
   
 .navbar-item {
     padding: 14px 16px;
     font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-item a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #logo-name {
@@ -37,11 +47,11 @@
     float: left;
     font-size: 2rem;
     margin-right: auto;
+
 }
   
-.navbar-item a:hover {
-    color: grey;
-    text-decoration: underline;
+.navbar-item:hover {
+    background-color: var(--light-grey, grey);
 }
 
 /* Intro Section */
@@ -52,7 +62,7 @@
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    height: 94vh;
+    height: 94dvh;
     text-align: center;
     align-items: center;
     justify-items: center;
@@ -74,6 +84,18 @@
 #intro-description > h1 {
     font-size: 300%;
     line-height: 50%;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #intro-description > p {
@@ -90,8 +112,8 @@
     grid-row-gap: 0px;
     justify-content: center;
     text-align: center;
-    height: 96vh;
-    margin-bottom: 4vh;
+    height: 96dvh;
+    margin-bottom: 4dvh;
 }
 
 #about-me-description {
@@ -118,7 +140,54 @@
     border-radius: 5%;
 }
 
+/* Footer section */
 footer {
-    height: auto;
-
+    height: 12dvh;
+    background-color: var(--dark-grey, gre);
+    text-align: center;
+    color: white;
 }
+
+footer  p {
+    font-size: 1rem;
+}
+
+.footer-bar {
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bar-container {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background-color: var(--dark-grey, grey);
+}
+
+.footer-bar-item {
+    padding: 14px 16px;
+    font-size: 1.25rem;
+    display: flex;
+}
+
+.footer-bar-item:hover {
+    text-decoration: underline;
+}
+
+.footer-bar-item a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Experience Page */
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+}
+

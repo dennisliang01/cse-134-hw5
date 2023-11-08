@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dennis Liang Portfolio Website</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Dennis Liang Experience Page</title>
+    <link rel="stylesheet" href="./assets/css/home.css">
   </head>
   <body>
     <header>
         <!-- Navbar section -->
-        <nav>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="workExperience.html">Work Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="hobby.html">Hobby</a></li>
-            <li><a href="contactMe.html">Contact Me</a></li>
-            <li><a href="experiment.html">Experiment</a></li>
-          </ul>
+        <nav class="navbar">
+            <ul class="navbar-container">
+                <li class="navbar-item" id="logo-name"><a href="home.html">Dennis Liang</a></li>
+                <li class="navbar-item"><a href="home.html#about-me">About Me</a></li>
+                <li class="navbar-item"><a href="experience.html">Experience</a></li>
+                <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
+                <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
+                <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <h2>Work Experience</h2>
+        <h2 class="section-title">Work Experience</h2>
         <!-- Links to important work documents and websites -->
         <ul>
             <li><a href="assets/Resume.pdf">Resume</a></li>
@@ -40,19 +40,33 @@
             <h3>Work Experience 3</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis eligendi accusantium, dolor delectus vitae praesentium! Obcaecati ea voluptates sunt quibusdam illo libero, soluta, ipsam maiores dolor alias doloremque sint.</p>
         </section>
+
+        <h2 class="section-title">Projects</h2>
+        
+        <!-- Each section dedicated to a sepearte project -->
+        <section>
+            <h3>Say-It ChatGPT Voice Assitant</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi fuga laborum voluptate, quas, facilis nobis rerum porro consectetur vitae, autem tenetur similique natus corrupti illum? Ratione mollitia provident similique nemo.</p>
+        </section>
+        <section>
+          <h3>Project 2</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi fuga laborum voluptate, quas, facilis nobis rerum porro consectetur vitae, autem tenetur similique natus corrupti illum? Ratione mollitia provident similique nemo.</p>
+        </section>
+        <section>
+          <h3>Project 3</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi fuga laborum voluptate, quas, facilis nobis rerum porro consectetur vitae, autem tenetur similique natus corrupti illum? Ratione mollitia provident similique nemo.</p>
+        </section>
     </main>
 
-    <!-- Footer contact section -->
+    <!-- Contact info footer section -->
     <footer>
-      <hr>
-      <h2>Contact Me</h2>
-
-      <nav>
-          <ul>
-            <li><a href="mailto:dennisliang01@gmail.com">Email</a></li>
-            <li><a href="https://www.linkedin.com/in/dennisbliang/">LinkedIn</a></li>
-          </ul>
-      </nav>
+        <nav class="footer-bar">
+            <ul class="footer-bar-container">
+                <li class="footer-bar-item"><a href="mailto:dennisliang01@gmail.com">Email</a></li>
+                <li class="footer-bar-item"><a href="https://www.linkedin.com/in/dennisbliang/">LinkedIn</a></li>
+            </ul>
+        </nav>
+        <p>Copyright &copy 2023 Dennis Liang. All Rights Reserved.</p>
     </footer>
   </body>
 </html>
