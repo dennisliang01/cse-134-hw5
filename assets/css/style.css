@@ -295,3 +295,18 @@ figcaption {
 .test-has-selector:has(p) {
     background-color: green;
 }
+
+/* Desktop Settings */
+@media screen and (max-width: 1400px) {
+
+}
+
+/* Tablet or Restricitive Laptop Settings */
+@media screen and (max-width: 1400px) {
+    
+}
+
+/* Very Small Screen or Phone Settings */
+@media screen and (max-width: 1400px) {
+    
+}
