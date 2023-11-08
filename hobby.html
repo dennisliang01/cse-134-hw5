@@ -4,60 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dennis Liang Portfolio Website</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Dennis Liang Hobby Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
     <header>
         <!-- Navbar section -->
-        <nav>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="workExperience.html">Work Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="hobby.html">Hobby</a></li>
-            <li><a href="contactMe.html">Contact Me</a></li>
-            <li><a href="experiment.html">Experiment</a></li>
-          </ul>
+        <nav class="navbar">
+            <ul class="navbar-container">
+                <li class="navbar-item" id="logo-name"><a href="home.html">Dennis Liang</a></li>
+                <li class="navbar-item"><a href="home.html#about-me">About Me</a></li>
+                <li class="navbar-item"><a href="experience.html">Experience</a></li>
+                <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
+                <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
+                <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <h2>Hobby</h2>
+        <h2 class="page-title">Hobby</h2>
         <!-- Cycling section with embedded Youtube video -->
-        <section>
+        <section class="hobby-section">
             <h3>Cycling</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ObqHTuDkT0I?si=vQUh2tEGmC0Afohg" title="YouTube video player"></iframe>
-        </section>
-        <section>
-            <h3>Food</h3>
-            <p>I enjoy trying a variety of different food. My favorite food include:</p>
-            <!-- Ordered list for top food ranking -->
-            <ol>
-                <li><p>Sushi/Ramen</p></li>
-                <li><p>Pasta</p></li>
-                <li><p>Tacos</p></li>
-            </ol>
-            <p>My list of favorite food is ever changing.</p>
-        </section>
-        <section>
-            <h3>Soccer/Football</h3>
-            <!-- Using strong tag to emphasize important words -->
-            <p>I enjoy playing and watching football. Some of my favorite teams include the <strong>Portland Timbers</strong> and <strong>Real Madrid</strong>.</p>
+            <iframe class="hobby-video" width="560" height="315" src="https://www.youtube.com/embed/ObqHTuDkT0I?si=vQUh2tEGmC0Afohg" title="YouTube video player"></iframe>
+            <p>I started cycling during the summer of 2019 and have continued ever since. I am currently racing in category 3 and collegiate B for Swami's and UC San Diego Cycling Team.</p>
         </section>
         
     </main>
-    <!-- Footer contact info section -->
-    <footer>
-      <hr>
-      <h2>Contact Me</h2>
+    <!-- Contact info footer section -->
+        <footer>
+            <nav class="footer-bar">
+                <ul class="footer-bar-container">
+                    <li class="footer-bar-item"><a href="mailto:dennisliang01@gmail.com">Email</a></li>
+                    <li class="footer-bar-item"><a href="https://www.linkedin.com/in/dennisbliang/">LinkedIn</a></li>
+                </ul>
+            </nav>
+            <p>Copyright &copy 2023 Dennis Liang. All Rights Reserved.</p>
 
-      <nav>
-          <ul>
-            <li><a href="/html/">Email</a></li>
-            <li><a href="/css/">LinkedIn</a></li>
-          </ul>
-      </nav>
-    </footer>
-	<!-- <script src="index.js"></script> -->
-  </body>
+        </footer>
+        <!-- <script src="index.js"></script> -->
+    </body>
 </html>
