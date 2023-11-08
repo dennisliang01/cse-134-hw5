@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dennis Liang Experience Page</title>
-    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
     <header>
@@ -24,37 +24,56 @@
     <main>
         <h2 class="section-title">Work Experience</h2>
         <!-- Links to important work documents and websites -->
-        <ul>
-            <li><a href="assets/Resume.pdf">Resume</a></li>
-            <li><a href="assets/coverLetter.pdf">Cover Letter</a></li>
-            <li><a href="https://www.linkedin.com/in/dennisbliang/">LinkedIn</a></li>
+        <ul class="social-container">
+            <li class="social-item"><a href="assets/Resume.pdf">Resume</a></li>
+            <li class="social-item"><a href="assets/coverLetter.pdf">Cover Letter</a></li>
+            <li class="social-item"><a id="test" href="https://www.linkedin.com/in/dennisbliang/">LinkedIn</a></li>
         </ul>
         <!-- Section for detailing work experience -->
-        <section>
-            <h3>Work Experience 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis eligendi accusantium, dolor delectus vitae praesentium! Obcaecati ea voluptates sunt quibusdam illo libero, soluta, ipsam maiores dolor alias doloremque sint.</p>
-            <br>
-            <h3>Work Experience 2</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis eligendi accusantium, dolor delectus vitae praesentium! Obcaecati ea voluptates sunt quibusdam illo libero, soluta, ipsam maiores dolor alias doloremque sint.</p>
-            <br>
-            <h3>Work Experience 3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis eligendi accusantium, dolor delectus vitae praesentium! Obcaecati ea voluptates sunt quibusdam illo libero, soluta, ipsam maiores dolor alias doloremque sint.</p>
+        <section class="experience-section">
+            <h3>Software Engineering Intern</h3>
+            <h5>Early Transition in Tech Association</h5>
+            <ul>
+                <li>Designing and developing a student-friendly web app learning platform using HTML, CSS, JavaScript, React, and Bootstrap to provide computer science education for under-served communities in Birmingham, AL</li>
+                <li>Collaborating with an Agile software development startup team of 10 software engineers to create innovative technology solutions</li>
+            </ul>
+            <h3>Media Liaison</h3>
+            <h5>University of California, San Dieog Cycling Team</h5>
+            <ul>
+                <li> Promoting and amplifying community engagement through social media platforms resulting in 15% increase in team social followings</li>
+                <li>Communicating and coordinating creative media advertisements with team officers and members to improve team atmosphere</li>
+            </ul>
+            <h3>Outreach Co-Chair</h3>
+            <h5>University of California, San Diego IEEE Chapter</h5>
+            <ul>
+                <li>Directed and oversaw outreach events that promoted K-12 STEM education in the San Diego community with more than 100 student attendees</li>
+                <li>Recruited and coordinated volunteers for various events, fostering a strong sense of community amongst more than 30 university student volunteers</li>
+            </ul>
         </section>
 
+        <hr>
         <h2 class="section-title">Projects</h2>
         
         <!-- Each section dedicated to a sepearte project -->
-        <section>
+        <section class="experience-section">
+            <h3>University of California, San Diego Cycling Team Website</h3>
+            <ul>
+                <li> Developed a ChatGPT email and search voice assistant using REST API and Open AI
+                </li>
+                <li>Collaborated with a team of 5 other software engineers under an Agile software development cycle</li>
+                <li>Facilitated product feedback meeting with the client after each milestone to continuously fulfill customer requirements</li>
+            </ul>
             <h3>Say-It ChatGPT Voice Assitant</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi fuga laborum voluptate, quas, facilis nobis rerum porro consectetur vitae, autem tenetur similique natus corrupti illum? Ratione mollitia provident similique nemo.</p>
-        </section>
-        <section>
-          <h3>Project 2</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi fuga laborum voluptate, quas, facilis nobis rerum porro consectetur vitae, autem tenetur similique natus corrupti illum? Ratione mollitia provident similique nemo.</p>
-        </section>
-        <section>
-          <h3>Project 3</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi fuga laborum voluptate, quas, facilis nobis rerum porro consectetur vitae, autem tenetur similique natus corrupti illum? Ratione mollitia provident similique nemo.</p>
+            <ul>
+                <li>Spearheaded custom website based on the variable needs of the cycling team resulting in increased communication amongst 30 team members and the greater cycling community</li>
+                <li>Developed website using HTML, CSS, JavaScript, and GitHub Pages with future development in mind allowing for a streamlined future upgrade process</li>
+            </ul>
+            <h3>New York Traffic Ticket Database</h3>
+            <ul>
+                <li>Implemented an in-memory database using a hash table storing NYC parking ticket data from 2019
+                </li>
+                <li>Utilized memory allocation and deallocation techniques to create a memory-efficient database</li>
+            </ul>
         </section>
     </main>
 
@@ -67,6 +86,7 @@
             </ul>
         </nav>
         <p>Copyright &copy 2023 Dennis Liang. All Rights Reserved.</p>
+
     </footer>
   </body>
 </html>

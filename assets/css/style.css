@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 :root {
     --blue: #133A4D;
@@ -52,6 +52,50 @@ body {
   
 .navbar-item:hover {
     background-color: var(--light-grey, grey);
+}
+
+/* Footer section */
+footer {
+    height: 12dvh;
+    background-color: var(--dark-grey, grey);
+    text-align: center;
+    color: white;
+}
+
+footer  p {
+    font-size: 1rem;
+}
+
+.footer-bar {
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bar-container {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background-color: var(--dark-grey, grey);
+    line-height: 1em;
+}
+
+.footer-bar-item {
+    padding: 14px 16px;
+    font-size: 1.25rem;
+    display: flex;
+}
+
+.footer-bar-item:hover {
+    text-decoration: underline;
+}
+
+.footer-bar-item a {
+    text-decoration: none;
+    color: white;
 }
 
 /* Intro Section */
@@ -140,49 +184,6 @@ body {
     border-radius: 5%;
 }
 
-/* Footer section */
-footer {
-    height: 12dvh;
-    background-color: var(--dark-grey, gre);
-    text-align: center;
-    color: white;
-}
-
-footer  p {
-    font-size: 1rem;
-}
-
-.footer-bar {
-    overflow: hidden;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-bar-container {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    height: auto;
-    background-color: var(--dark-grey, grey);
-}
-
-.footer-bar-item {
-    padding: 14px 16px;
-    font-size: 1.25rem;
-    display: flex;
-}
-
-.footer-bar-item:hover {
-    text-decoration: underline;
-}
-
-.footer-bar-item a {
-    text-decoration: none;
-    color: white;
-}
-
 
 /* Experience Page */
 
@@ -191,3 +192,35 @@ footer  p {
     font-size: 2rem;
 }
 
+.social-container {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social-item {
+    border: solid grey;
+    border-radius: 10%;
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+}
+
+.social-item:hover {
+    border: var(--blue, blue);
+    background-color: var(--blue, blue);
+}
+
+.social-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.social-item:hover a {
+    color: white;
+}
+
+.experience-section {
+    margin: 0 10rem 1rem;
+    padding: 1rem 1rem;
+    line-height: 1em;
+}
