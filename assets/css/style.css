@@ -27,6 +27,7 @@ body {
     padding: 0;
     height: auto;
     background-color: var(--dark-grey, grey);
+    width: 100%;
 }
   
 .navbar-item {
@@ -53,6 +54,26 @@ body {
   
 .navbar-item:hover {
     background-color: var(--light-grey, grey);
+}
+
+.hamburger {
+    position: fixed;
+    border: none;
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    display: none;
+}
+
+.close {
+    position: absolute;
+    border: none;
+    color: white;
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+    display: none;
 }
 
 /* Footer section */
@@ -116,7 +137,7 @@ footer  p {
     
 #profileImage {
     align-self: center;
-    height: 60vh;
+    height: 60dvh;
     width: auto;
     margin: 0 0 0 10rem;
     
@@ -162,6 +183,10 @@ footer  p {
     margin-bottom: 4dvh;
 }
 
+#about-me h2 {
+    font-size: 2rem;
+}
+
 #about-me-description {
     grid-area: 1 / 1 / 2 / 4;
     margin: 0 10rem;
@@ -174,6 +199,8 @@ footer  p {
 #about-me-parts-2 {
     grid-area: 2 / 2 / 3 / 3;
 }
+
+
 
 #about-me-parts-3 {
     grid-area: 2 / 3 / 3 / 4;
@@ -298,11 +325,59 @@ figcaption {
 
 /* Desktop Settings */
 @media screen and (max-width: 1400px) {
-
+    
 }
 
 /* Tablet or Restricitive Laptop Settings */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 900px) {
+
+
+    .navbar-item {
+        display: none;
+    }
+
+    #logo-name {
+        display: flex;
+        font-size: 30px;
+        margin-left: 2rem;
+    }
+
+    #intro {
+        display: block;
+        justify-content: center;
+        margin: 5rem;
+        height: auto;
+    }
+
+    #profileImage {
+        width: 60dvw;
+        height: auto;
+        margin: 0;
+    }
+
+    #intro-description {
+        margin: 0;
+    }
+
+    #about-me {
+        height: auto;
+        display: block;
+        padding: 0;
+    }
+
+    .about-me-item {
+        margin-bottom: 1rem;
+    }
+    .about-me-pic {
+        width: 50dvw;
+        height: auto;   
+    }
+
+    .about-me-item details {
+        margin: 0 5rem;
+    }
+
+
     
 }
 
