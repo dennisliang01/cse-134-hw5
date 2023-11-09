@@ -569,6 +569,11 @@ figcaption {
 
     .experience-section {
         margin: 1rem;
+        
+    }
+
+    .hobby-section {
+        height: 100%;
     }
 
     .hobby-section iframe {
@@ -577,7 +582,7 @@ figcaption {
     }
 
     .email-form-section {
-        height: 90dvh;
+        height: 100%;
     }
 
     .email-form {
@@ -591,6 +596,13 @@ figcaption {
 
     .email-form textarea {
         width: 100%;
+    }
+
+    .experiment-page h2 {
+        font-size: 1.5rem;
+    }
+    .experiment-page {
+        height: 100%;
     }
 
 
