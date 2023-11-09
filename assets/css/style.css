@@ -217,7 +217,7 @@ footer  p {
     height: 60dvh;
     width: auto;
     margin: 0 0 0 10rem;
-    
+    border-radius: 50%;
 }
 
 #intro-description {
