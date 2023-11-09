@@ -485,8 +485,18 @@ figcaption {
         margin: 2rem;
     }
 
+    .hobby-section {
+        height: 75dvh;
+    }
 
+    .hobby-section iframe {
+        width: 80dvw;
+        height: 40dvh;
+    }
 
+    .hobby-section p {
+        margin: 3rem;
+    }
 }
 
 /* Very Small Screen or Phone Settings */
@@ -536,6 +546,11 @@ figcaption {
 
     .experience-section {
         margin: 1rem;
+    }
+
+    .hobby-section iframe {
+        width: 90dvw;
+        height: 40dvh;
     }
 
 
