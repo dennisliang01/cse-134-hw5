@@ -100,6 +100,7 @@ body {
 .navbar-item a {
     text-decoration: none;
     color: white;
+    align-self: center;
 }
 
 .menu-button-container {
@@ -497,6 +498,15 @@ figcaption {
     .hobby-section p {
         margin: 3rem;
     }
+
+    .email-form {
+        width: 80dvw;
+    }
+
+    .email-form textarea {
+        width: 100%;
+    }
+
 }
 
 /* Very Small Screen or Phone Settings */
@@ -553,5 +563,17 @@ figcaption {
         height: 40dvh;
     }
 
+    .email-form {
+        display: flex;
+        line-height: 2rem;
+    }
+
+    .email-form label {
+        display: block;
+    }
+
+    .email-form textarea {
+        width: 100%;
+    }
 
 }
