@@ -399,14 +399,9 @@ figcaption {
     background-color: green;
 }
 
-/* Desktop Settings */
-@media screen and (max-width: 1400px) {
-
-}
-
 
 /* Tablet or Restricitive Laptop Settings */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .menu-button-container {
         display: flex;
     }
@@ -486,11 +481,43 @@ figcaption {
         margin: 0 5rem;
     }
 
-
-    
 }
 
 /* Very Small Screen or Phone Settings */
 @media screen and (max-width: 500px) {
+    #intro {
+        margin: 2rem;
+    }
+
+    #profileImage {
+        width: 75dvw;
+        height: auto;
+        margin: 1rem;
+    }
+
     
+    #intro-description {
+        font-size: smaller;
+    }
+
+    #intro-description h1 {
+        font-size: 2rem;
+    }
+
+    #about-me {
+        margin: 0;
+    }
+
+    #about-me h2{
+        font-size: 1.5rem;
+    }
+
+    #about-me-description {
+        margin: 2rem;
+    }
+
+    .about-me-pic {
+        width: 70dvw;
+        height: auto;   
+    }
 }
