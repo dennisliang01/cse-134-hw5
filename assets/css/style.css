@@ -338,7 +338,6 @@ footer  p {
     text-align: center;
     font-size: 3rem;
     line-height: 0;
-    
 }
 
 .hobby-section {
@@ -361,7 +360,8 @@ footer  p {
 /* Contact Me Page */
 .email-form-section {
     text-align: center;
-    height: 90dvh;
+    min-height: 80dvh;
+    height: auto;
 }
 .email-form {
     display: inline-block;
@@ -374,6 +374,12 @@ legend {
 }
 
 /* Experiment Page */
+
+.experiment-page {
+    height: 90dvh;
+    margin: 1rem 3rem;
+}
+
 #code-upside-down {
     transform: rotate(0.5turn);
     display: block;
@@ -507,6 +513,13 @@ figcaption {
         width: 100%;
     }
 
+    
+
+    .experiment-page h2 {
+        font-size: 2rem;
+        line-height: 1rem;
+    }
+
 }
 
 /* Very Small Screen or Phone Settings */
@@ -563,6 +576,10 @@ figcaption {
         height: 40dvh;
     }
 
+    .email-form-section {
+        height: 90dvh;
+    }
+
     .email-form {
         display: flex;
         line-height: 2rem;
@@ -575,5 +592,7 @@ figcaption {
     .email-form textarea {
         width: 100%;
     }
+
+
 
 }
