@@ -481,10 +481,19 @@ figcaption {
         margin: 0 5rem;
     }
 
+    .experience-section {
+        margin: 2rem;
+    }
+
+
+
 }
 
 /* Very Small Screen or Phone Settings */
 @media screen and (max-width: 500px) {
+    footer p {
+        font-size: 0.75rem;
+    }
     #intro {
         margin: 2rem;
     }
@@ -520,4 +529,14 @@ figcaption {
         width: 70dvw;
         height: auto;   
     }
+
+    .social-container {
+        padding: 0;
+    }
+
+    .experience-section {
+        margin: 1rem;
+    }
+
+
 }
