@@ -9,6 +9,7 @@
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-off-white, white);
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 }
 
 /* Navbar */
-.navbar {
+/* .navbar {
     overflow: hidden;
 }
 
@@ -54,26 +55,101 @@ body {
   
 .navbar-item:hover {
     background-color: var(--light-grey, grey);
+} */
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-grey, grey);
+    height: auto;
+    padding: 2dvh;
 }
 
-.hamburger {
-    position: fixed;
-    border: none;
-    cursor: pointer;
-    top: 1rem;
-    right: 1rem;
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+
+
+.navbar-logo {
+    text-decoration: none;
     color: white;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.navbar-item {
+    margin: 0 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+.navbar-logo:hover, .navbar-item:hover {
+    background-color: var(--light-grey, grey);
+}
+
+
+.navbar-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
     display: none;
 }
 
-.close {
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
     position: absolute;
-    border: none;
-    color: white;
-    cursor: pointer;
-    top: 1rem;
-    right: 1rem;
-    display: none;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
 }
 
 /* Footer section */
@@ -325,21 +401,54 @@ figcaption {
 
 /* Desktop Settings */
 @media screen and (max-width: 1400px) {
-    
+
 }
 
+
 /* Tablet or Restricitive Laptop Settings */
-@media screen and (max-width: 900px) {
-
-
-    .navbar-item {
-        display: none;
+@media screen and (max-width: 800px) {
+    .menu-button-container {
+        display: flex;
+    }
+    
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
-    #logo-name {
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu > li {
         display: flex;
-        font-size: 30px;
-        margin-left: 2rem;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
     }
 
     #intro {
@@ -382,6 +491,6 @@ figcaption {
 }
 
 /* Very Small Screen or Phone Settings */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 500px) {
     
 }

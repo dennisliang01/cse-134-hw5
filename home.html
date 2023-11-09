@@ -6,32 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dennis Liang Portfolio Home Page</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   </head>
   <body>
-    <header>
-      <!-- Navbar section -->
-        <nav class="navbar">
-            <ul class="navbar-container">
+    <header class="nav-header">
+        <!-- Navbar section -->
+        <!-- <nav class="navbar">
+            <ul class="navbar-container" id="navbar-container">
                 <li class="navbar-item" id="logo-name"><a href="home.html">Dennis Liang</a></li>
                 <li class="navbar-item"><a href="home.html#about-me">About Me</a></li>
                 <li class="navbar-item"><a href="experience.html">Experience</a></li>
                 <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
                 <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
                 <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
-                <a class="close" href="">
-                    <span class="material-icons">
-                        close
-                    </span>
-                </a>
             </ul>
-            <a class="hamburger" href="#menu">
-                <span class="material-icons">
-                    menu
-                </span>
-            </a>
+        </nav> -->
+
+        <nav class="top-nav">
+            <div>
+                <a href="home.html" class="navbar-logo">Dennis Liang</a>
+            </div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li class="navbar-item"><a href="home.html#about-me">About Me</a></li>
+                <li class="navbar-item"><a href="experience.html">Experience</a></li>
+                <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
+                <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
+                <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
+            </ul>
         </nav>
-        
+          
     </header>
     <!-- Main section -->
     <main>
