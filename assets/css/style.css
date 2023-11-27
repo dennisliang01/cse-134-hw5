@@ -359,18 +359,44 @@ footer  p {
 
 /* Contact Me Page */
 .email-form-section {
-    text-align: center;
     min-height: 80dvh;
     height: auto;
-}
-.email-form {
-    display: inline-block;
-    margin: 2rem;
-    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 legend {
     font-size: larger;
+}
+
+.email-form {
+    line-height: 2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.field-label {
+    text-align: left;
+}
+
+.message-output {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+#name-label:after {
+    content: "*";
+    color: red;
 }
 
 /* Experiment Page */
@@ -408,6 +434,7 @@ figcaption {
 
 
 /* Tablet or Restricitive Laptop Settings */
+/* Using iPad Air as reference */
 @media screen and (max-width: 900px) {
     .menu-button-container {
         display: flex;
@@ -505,15 +532,11 @@ figcaption {
         margin: 3rem;
     }
 
-    .email-form {
-        width: 80dvw;
-    }
+
 
     .email-form textarea {
         width: 100%;
     }
-
-    
 
     .experiment-page h2 {
         font-size: 2rem;
@@ -581,6 +604,8 @@ figcaption {
         height: 40dvh;
     }
 
+
+
     .email-form-section {
         height: 100%;
     }
@@ -588,6 +613,11 @@ figcaption {
     .email-form {
         display: flex;
         line-height: 2rem;
+        font-size: smaller;
+    }
+
+    fieldset {
+        border: none;
     }
 
     .email-form label {
