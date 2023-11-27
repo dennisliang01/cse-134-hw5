@@ -381,11 +381,15 @@ legend {
 .form-field {
     display: flex;
     flex-direction: column;
-
 }
 
 .field-label {
     text-align: left;
+}
+
+.field-label:after {
+    content: "*";
+    color: red;
 }
 
 .message-output {
@@ -394,10 +398,15 @@ legend {
     column-gap: 1rem;
 }
 
-#name-label:after {
-    content: "*";
-    color: red;
+input:valid, textarea:valid {
+    border: solid green 2px;
 }
+
+input:user-invalid {
+    border: 2px solid red;
+}
+
+
 
 /* Experiment Page */
 
