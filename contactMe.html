@@ -27,6 +27,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <!-- Contact form section for writing email to me -->
         <section class="email-form-section">
@@ -35,41 +36,92 @@
             <form class="email-form" action="" method="GET">
                 <fieldset>
                     <!-- Email box description -->
-                    <legend><b>Email Form:</b></legend>
+                    <legend><b>Email Form</b></legend>
 
                     <div class="form-field">
-                        <label class="field-label" for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" 
-                            maxlength="100" pattern="^[ A-Za-z0-9_@./#&+-]*$" required>
+                        <label class="field-label" for="name-input">Name</label>
+                        
+                        <input type="text" id="name-input" name="name-input" placeholder="Your Name" 
+                            maxlength="100" pattern="[\w\s]*" required>
                         <div class="message-output">
-                            <output class="error-message" name="">error-message-if-any</output>
-                            <output class="info-message" name="">info-message-if-any</output>
+                            <output class="error-message" id="name-error-message"></output>
+                            <!-- <output class="info-message" id="name-info-message"></output> -->
                         </div>
+                        <script>
+                            let nameInput = document.getElementById("name-input");
+                            let nameErrorMessage = document.getElementById("name-error-message");
+
+                            nameInput.addEventListener("input", (event) => {
+                            if (nameInput.validity.valueMissing) {
+                                nameInput.setCustomValidity("Please provide your name");
+                                nameErrorMessage.innerText = "Please provide your name";
+                            } else {
+                                nameInput.setCustomValidity("");
+                                nameErrorMessage.innerText = "";
+                            }
+                            });
+                        </script>
                     </div>
                     
                     <div class="form-field">
                         <label class="field-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email Address"    maxlength="320" pattern="^[ A-Za-z0-9_@./#&+-]*$" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address"    maxlength="320" required>
+                        
                         <div class="message-output">
-                            <output name="">error-message-if-any</output>
-                            <output name="">info-message-if-any</output>
+                            <output class="error-message" id="email-error-message"></output>
                         </div>
+                        <script>
+                            let emailInput = document.getElementById("email");
+                            let emailErrorMessage = document.getElementById("email-error-message");
+
+                            emailInput.addEventListener("input", (event) => {
+                            if (emailInput.validity.valueMissing || emailInput.validity.typeMismatch) {
+                                emailInput.setCustomValidity("Please provide a valid email address");
+                                emailErrorMessage.innerHTML = "Please provide a valid email address";
+                            } else {
+                                emailInput.setCustomValidity("");
+                                emailErrorMessage.innerHTML = "";
+                            }
+                            });
+                        </script>
                     </div>
                     
                     <div class="form-field">
                         <label class="field-label" for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="^[ A-Za-z0-9_@./#&+-]*$" required>
+                        <input type="text" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="[\w\s]*" required>
                         <div class="message-output">
-                            <output name="">error-message-if-any</output>
-                            <output name="">info-message-if-any</output>
+                            <output class="error-message" id="subject-error-message"></output>
                         </div>
-                        
+                        <script>
+                            const subjectInput = document.getElementById("subject");
+                            let subjectErrorMessage = document.getElementById("subject-error-message");
+
+                            subjectInput.addEventListener("input", (event) => {
+                            if (subjectInput.validity.valueMissing || subjectInput.validity.typeMismatch) {
+                                subjectInput.setCustomValidity("Please provide a valid email subject");
+                                subjectErrorMessage.innerText = "Please provide a valid email subject";
+                            } else {
+                                subjectInput.setCustomValidity("");
+                                subjectErrorMessage.innerText = "";
+                            }
+                            });
+                        </script>
                     </div>
 
                     <div class="form-field">
                         <label class="field-label" for="comments">Comments</label>
-                        <!-- <textarea id="text" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" required></textarea> -->
-                        <input id="text" name="comments" placeholder="Your Comments" maxlength="1000" pattern="^[ A-Za-z0-9_@./#&+-]*$" required></textarea>
+                        <textarea id="text" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" pattern="[\w\s]*$" required></textarea>
+                        <script>
+                            const commentsInput = document.getElementById("comments");
+
+                            commentsInput.addEventListener("textarea", (event) => {
+                            if (commentsInput.validity.valueMissing) {
+                                commentsInput.setCustomValidity("Please enter your comments");
+                            } else {
+                                commentsInput.setCustomValidity("");
+                            }
+                            });
+                        </script>
                         <div class="message-output">
                             <output name="">error-message-if-any</output>
                             <output name="">info-message-if-any</output>
