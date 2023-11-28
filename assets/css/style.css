@@ -153,10 +153,6 @@ body {
     transform: rotate(-405deg);
 }
 
-#color-theme-nav-bar-item {
-    background-color: var(--dark-grey, grey);
-}
-
 #color-mode-button {
     border: none;
     border-radius: 25%;
