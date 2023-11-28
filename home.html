@@ -35,10 +35,17 @@
                 <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
                 <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
                 <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
-                <li class="navbar-item">
+                <li class="navbar-item" id="color-theme-nav-bar-item">
                     <button class="dark-mode-toggle" id="color-mode-button">
                         <img src="./assets/icons/darkMode.svg" id="color-mode-image">
                     </button>
+                    <noscript>
+                        <style>
+                            #color-theme-nav-bar-item {
+                                display: none;
+                            }
+                        </style>
+                    </noscript>
                 </li>
             </ul>
         </nav>

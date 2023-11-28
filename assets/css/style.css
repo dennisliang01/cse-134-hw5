@@ -162,6 +162,18 @@ body {
     color: white;
 }
 
+.dark-mode-theme .social-item {
+    border: solid white;
+}
+
+.dark-mode-theme .social-item:hover {
+    background-color: var(--light-grey, grey);
+}
+
+.dark-mode-theme .social-item a {
+    color: white;
+}
+
 /* Footer section */
 footer {
     height: 12dvh;
