@@ -32,8 +32,8 @@
         <!-- Contact form section for writing email to me -->
         <section class="email-form-section">
             <h2 class="page-title">Contact Me</h2>
-            <!-- <form class="email-form" action="https://httpbin.org/get" method="GET"> -->
-            <form class="email-form" action="" method="GET">
+            <!-- <form class="email-form" action="https://httpbin.org/get" method="POST"> -->
+            <form class="email-form" method="post">
                 <fieldset>
                     <!-- Email box description -->
                     <legend><b>Email Form</b></legend>
@@ -45,20 +45,19 @@
                             maxlength="100" pattern="[\w\s]*" required>
                         <div class="message-output">
                             <output class="error-message" id="name-error-message"></output>
-                            <!-- <output class="info-message" id="name-info-message"></output> -->
                         </div>
                         <script>
                             let nameInput = document.getElementById("name-input");
                             let nameErrorMessage = document.getElementById("name-error-message");
 
                             nameInput.addEventListener("input", (event) => {
-                            if (nameInput.validity.valueMissing) {
-                                nameInput.setCustomValidity("Please provide your name");
-                                nameErrorMessage.innerText = "Please provide your name";
-                            } else {
-                                nameInput.setCustomValidity("");
-                                nameErrorMessage.innerText = "";
-                            }
+                                if (nameInput.validity.valueMissing) {
+                                    nameInput.setCustomValidity("");
+                                    nameErrorMessage.innerText = "Please provide your name";
+                                } else {
+                                    nameInput.setCustomValidity("");
+                                    nameErrorMessage.innerText = "";
+                                }
                             });
                         </script>
                     </div>
@@ -75,13 +74,13 @@
                             let emailErrorMessage = document.getElementById("email-error-message");
 
                             emailInput.addEventListener("input", (event) => {
-                            if (emailInput.validity.valueMissing || emailInput.validity.typeMismatch) {
-                                emailInput.setCustomValidity("Please provide a valid email address");
-                                emailErrorMessage.innerHTML = "Please provide a valid email address";
-                            } else {
-                                emailInput.setCustomValidity("");
-                                emailErrorMessage.innerHTML = "";
-                            }
+                                if (emailInput.validity.valueMissing || emailInput.validity.typeMismatch) {
+                                    emailInput.setCustomValidity("");
+                                    emailErrorMessage.innerHTML = "Please provide a valid email address";
+                                } else {
+                                    emailInput.setCustomValidity("");
+                                    emailErrorMessage.innerHTML = "";
+                                }
                             });
                         </script>
                     </div>
@@ -93,39 +92,46 @@
                             <output class="error-message" id="subject-error-message"></output>
                         </div>
                         <script>
-                            const subjectInput = document.getElementById("subject");
+                            let subjectInput = document.getElementById("subject");
                             let subjectErrorMessage = document.getElementById("subject-error-message");
 
                             subjectInput.addEventListener("input", (event) => {
-                            if (subjectInput.validity.valueMissing || subjectInput.validity.typeMismatch) {
-                                subjectInput.setCustomValidity("Please provide a valid email subject");
-                                subjectErrorMessage.innerText = "Please provide a valid email subject";
-                            } else {
-                                subjectInput.setCustomValidity("");
-                                subjectErrorMessage.innerText = "";
-                            }
+                                if (subjectInput.validity.valueMissing || subjectInput.validity.patternMismatch) {
+                                    subjectInput.setCustomValidity("");
+                                    subjectErrorMessage.innerText = "Please provide a valid email subject";
+                                } else {
+                                    subjectInput.setCustomValidity("");
+                                    subjectErrorMessage.innerText = "";
+                                }
                             });
                         </script>
                     </div>
 
                     <div class="form-field">
                         <label class="field-label" for="comments">Comments</label>
-                        <textarea id="text" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" pattern="[\w\s]*$" required></textarea>
+                        <textarea id="comments" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" pattern="[\w\s]*$" required></textarea>
+                        
+                        <div class="message-output">
+                            <output class="error-message" id="comments-error-message"></output>
+                            <output class="info-message" id="comments-info-message">info-message-if-any</output>
+                        </div>
                         <script>
-                            const commentsInput = document.getElementById("comments");
+                            let commentsInput = document.getElementById("comments");
+                            let commentsErrorMessage = document.getElementById("comments-error-message");
+                            let commentsInfoMessage = document.getElementById("comments-info-message");
 
-                            commentsInput.addEventListener("textarea", (event) => {
-                            if (commentsInput.validity.valueMissing) {
-                                commentsInput.setCustomValidity("Please enter your comments");
-                            } else {
-                                commentsInput.setCustomValidity("");
-                            }
+                            commentsInput.addEventListener("input", (event) => {
+                                if (commentsInput.validity.valueMissing || commentsInput.validity.patternMismatch) {
+                                    console.log("here");
+                                    commentsInput.setCustomValidity("");
+                                    commentsErrorMessage.innerText = "Please input a valid comment";
+                                } else {
+                                    commentsInput.setCustomValidity("");
+                                    subjectErrorMessage.innerText = "";
+
+                                }
                             });
                         </script>
-                        <div class="message-output">
-                            <output name="">error-message-if-any</output>
-                            <output name="">info-message-if-any</output>
-                        </div>
                     </div>
 
                     <!-- Hidden Form Field -->
@@ -148,5 +154,7 @@
         </nav>
         <p>Copyright &copy; 2023 Dennis Liang. All Rights Reserved.</p>
     </footer>
+
+    <!-- <script src="./assets/js/form.js"></script> -->
   </body>
 </html>
