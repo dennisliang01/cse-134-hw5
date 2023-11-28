@@ -7,13 +7,13 @@
     --bg-off-white: #eeeeee;
     /* font with fall back font */
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-off-white, white);
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    background-color: var(--bg-off-white, white);
 }
 
 /* Navbar */
@@ -151,6 +151,15 @@ body {
 #menu-toggle:checked + .menu-button-container .menu-button::after {
     margin-top: 0px;
     transform: rotate(-405deg);
+}
+
+#color-mode-button:hover {
+    cursor: pointer;
+}
+
+.dark-mode-theme {
+    background-color: black;
+    color: white;
 }
 
 /* Footer section */

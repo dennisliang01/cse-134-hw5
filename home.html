@@ -7,7 +7,7 @@
     <title>Dennis Liang Portfolio Home Page</title>
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
-  <body>
+  <body id="body-theme">
     <header class="nav-header">
         <!-- Navbar section -->
         <!-- <nav class="navbar">
@@ -35,9 +35,14 @@
                 <li class="navbar-item"><a href="hobby.html">Hobby</a></li>
                 <li class="navbar-item"><a href="contactMe.html">Contact Me</a></li>
                 <li class="navbar-item"><a href="experiment.html">Experiment</a></li>
+                <li class="navbar-item">
+                    <button class="dark-mode-toggle" id="color-mode-button">
+                        <img src="./assets/icons/darkMode.svg" id="color-mode-image">
+                    </button>
+                </li>
             </ul>
         </nav>
-          
+        
     </header>
     <!-- Main section -->
     <main>
@@ -104,5 +109,6 @@
         </nav>
         <p>Copyright &copy; 2023 Dennis Liang. All Rights Reserved.</p>
     </footer>
+    <script src="./assets/js/theme.js"></script>
   </body>
 </html>
