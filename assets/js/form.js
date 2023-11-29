@@ -65,6 +65,8 @@ function validateForm(event) {
             method: "post",
             body: formData,
         });
+        alert("Email Form Submitted");
+        contactForm.reset(); 
     }
     
 }
@@ -103,6 +105,14 @@ function validateName() {
         lastGoodNameInput = nameInput.value;
     }
 }
+
+nameInput.addEventListener("focusout", resetMessage);
+function resetMessage() {
+    nameErrorMessage.innerText = "";
+    nameErrorMessage.classList.remove("fade-out");
+    nameInput.classList.remove("error-field");
+}
+
 
 // Email Validation
 
