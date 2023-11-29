@@ -444,8 +444,6 @@ input:user-invalid textarea:user-invalid {
 
 .error-message {
     color: red;
-    /* animation: fadeOutAnimation backwards 1s; */
-    /* animation-delay: 5s; */
 }
 
 .fade-out {
@@ -454,7 +452,7 @@ input:user-invalid textarea:user-invalid {
 }
 
 .error-field {
-    border: 2px solid red;
+    border: 2px dashed red;
     animation: flash 1s ease-in-out;
 }
 
@@ -481,8 +479,6 @@ input:focus {
         opacity :0;
     }
 }
-
-
 
 
 /* Experiment Page */

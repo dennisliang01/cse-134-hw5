@@ -56,6 +56,7 @@ async function validateForm(event) {
 
     if (!contactForm.checkValidity()) {
         console.log("Error");
+        alert("Email Form Not Submitted Due to Invalid Input");
     } else {
         const formData = new FormData(event.target);
         formData.append('form_errors', JSON.stringify(form_errors));
@@ -65,7 +66,6 @@ async function validateForm(event) {
             body: formData,
         });
         alert("Email Form Submitted");
-        contactForm.reset(); 
     }
     
 }
@@ -107,8 +107,8 @@ function validateName() {
     }
 }
 
-nameInput.addEventListener("focusout", resetMessage);
-function resetMessage() {
+nameInput.addEventListener("focusout", resetNameMessage);
+function resetNameMessage() {
     nameErrorMessage.innerText = "";
     nameErrorMessage.classList.remove("fade-out");
     nameInput.classList.remove("error-field");
@@ -126,7 +126,7 @@ emailInput.addEventListener("input", validateEmail);
 
 // Not including pattern checking for email field due to complex constraint and using built in type checking
 function validateEmail() {
-    if (emailInput.validity.typeMismatch) {
+    if (!emailInput.checkValidity()) {
         emailErrorMessage.innerHTML = "Please enter a valid email address";
         emailErrorMessage.classList.add("fade-out");
         emailInput.classList.add("error-field");
@@ -136,6 +136,14 @@ function validateEmail() {
         emailInput.classList.remove("error-field");
     }
 }
+
+emailInput.addEventListener("focusout", resetEmailMessage);
+function resetEmailMessage() {
+    emailErrorMessage.innerText = "";
+    emailErrorMessage.classList.remove("fade-out");
+    emailInput.classList.remove("error-field");
+}
+
 
 // Subject Validation
 
@@ -148,6 +156,7 @@ let lastGoodSubjectInput = "";
 
 function validateSubject() {
     if (subjectInput.validity.patternMismatch) {
+        console.log("Here");
         subjectErrorMessage.innerText = "Please provide a valid email subject";
         subjectErrorMessage.classList.add("fade-out");
         subjectInput.classList.add("error-field");
@@ -158,6 +167,13 @@ function validateSubject() {
         subjectInput.classList.remove("error-field");
         lastGoodSubjectInput = subjectInput.value;
     }
+}
+
+subjectInput.addEventListener("focusout", resetSubjectMessage);
+function resetSubjectMessage() {
+    subjectErrorMessage.innerText = "";
+    subjectErrorMessage.classList.remove("fade-out");
+    subjectInput.classList.remove("error-field");
 }
 
 // Comments Validation
@@ -190,6 +206,14 @@ function validateComments() {
 
     }
 }
+
+commentsInput.addEventListener("focusout", resetEmailMessage);
+function resetEmailMessage() {
+    commentsErrorMessage.innerText = "";
+    commentsErrorMessage.classList.remove("fade-out");
+    commentsInput.classList.remove("error-field");
+}
+
 
 let currentLength = 0;
 commentsInfoMessage.innerText = currentLength + " / 1000";

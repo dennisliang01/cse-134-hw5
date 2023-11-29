@@ -37,9 +37,9 @@
                     <legend><b>Email Form:</b></legend>
 
                     <div class="form-field">
-                        <label class="field-label" for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" 
-                            maxlength="100" pattern="^[\w\s]*" required>
+                        <label class="field-label" for="name-input">Name</label>
+                        <input type="text" id="name-input" name="name-input" placeholder="Your Name" 
+                        minlength="1" maxlength="100" pattern="^[\w\s]*$" required>
                         <div class="message-output">
                             <output class="error-message">error-message-if-any</output>
                             <output class="info-message">info-message-if-any</output>
@@ -48,7 +48,8 @@
                     
                     <div class="form-field">
                         <label class="field-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email Address"    maxlength="320" pattern="^[\da-zA-Z+-_~@.]*$" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address"
+                        minlength="5" maxlength="320" pattern="^[\da-zA-Z+-_~@.]*$" required>
                         <div class="message-output">
                             <output class="error-message">error-message-if-any</output>
                             <output class="info-message">info-message-if-any</output>
@@ -57,7 +58,7 @@
                     
                     <div class="form-field">
                         <label class="field-label" for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="/^[\w\s~!@#$%^&*()-=_+;',./?|]*$/" required>
+                        <input type="text" id="subject" name="subject" placeholder="Your Email Subject"   minlength="1" maxlength="500" pattern="^[\w\s]*$" required>
                         <div class="message-output">
                             <output class="error-message">error-message-if-any</output>
                             <output class="info-message">info-message-if-any</output>
@@ -68,7 +69,7 @@
                     <div class="form-field">
                         <label class="field-label" for="comments">Comments</label>
                         <!-- <textarea id="text" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" required></textarea> -->
-                        <input type="text" id="comments" name="comments" placeholder="Your Comments" maxlength="1000" pattern="[\w\s]*" required></textarea>
+                        <input type="text" id="comments" name="comments" placeholder="Your Comments" minlength="1" maxlength="1000" pattern="^[\w\s~!@#$%^&*()-=_+;',./?|]*$" required>
                         <div class="message-output">
                             <output class="error-message">error-message-if-any</output>
                             <output class="info-message">info-message-if-any</output>
