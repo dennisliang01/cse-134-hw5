@@ -5,6 +5,7 @@
     --dark-grey: #2a2a2a;
     --light-grey: #979797;
     --bg-off-white: #eeeeee;
+    --light-black: #1a1a1a;
     /* font with fall back font */
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
@@ -163,7 +164,7 @@ body {
 }
 
 .dark-mode-theme {
-    background-color: black;
+    background-color: var(--light-black, black);
     color: white;
 }
 
@@ -428,7 +429,7 @@ input:valid, textarea:valid {
     border: solid green 2px;
 }
 
-input:user-invalid {
+input:user-invalid textarea:user-invalid {
     border: 2px solid red;
 }
 
@@ -438,8 +439,32 @@ input:user-invalid {
 
 .error-message {
     color: red;
-    animation: fadeOutAnimation backwards 1s;
-    animation-delay: 5s;
+    /* animation: fadeOutAnimation backwards 1s; */
+    /* animation-delay: 5s; */
+}
+
+.fade-out {
+    animation: fadeOutAnimation forwards 1s;
+    animation-delay: 3s;
+}
+
+.error-field {
+    border: 2px solid red;
+    animation: flash 1s ease-in-out;
+}
+
+@keyframes flash {
+    0%, 100% {
+        background-color: white;
+    }
+    50% {
+        background-color: yellow;
+    }
+}
+
+input:focus {
+    outline: none;
+    border: solid lightblue 3px;
 }
 
 @keyframes fadeOutAnimation {
@@ -452,10 +477,7 @@ input:user-invalid {
     }
 }
 
-/* animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-} */
+
 
 
 /* Experiment Page */
