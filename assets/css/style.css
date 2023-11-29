@@ -430,7 +430,12 @@ input:valid, textarea:valid {
 }
 
 input:user-invalid textarea:user-invalid {
-    border: 2px solid red;
+    border: 2px dashed red;
+}
+
+#name-input:user-invalid, #email:user-invalid, #subject:user-invalid, #comments:user-invalid {
+    border: 2px dashed red;
+
 }
 
 .message-output {

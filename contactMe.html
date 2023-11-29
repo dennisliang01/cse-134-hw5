@@ -53,8 +53,8 @@
                     <div class="form-field">
                         <label class="field-label" for="name-input">Name</label>
                         
-                        <input type="text" id="name-input" name="name-input" placeholder="Your Name" 
-                            maxlength="100" pattern="[\w\s]*$" required>
+                        <input type="text" class="field-input" id="name-input" name="name-input" placeholder="Your Name" 
+                            maxlength="100" pattern="^[\w\s]*$" required>
                             <!-- "[\w\s]*$" -->
                             <!-- "^[0-9]*$" -->
                         <div class="message-output">
@@ -64,7 +64,7 @@
                     
                     <div class="form-field">
                         <label class="field-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email Address"    maxlength="320" pattern="^[\da-zA-Z+-_~@.]*" required>
+                        <input type="email" class="field-input" id="email" name="email" placeholder="Your Email Address"    maxlength="320" pattern="^[\da-zA-Z+-_~@.]*" required>
                         
                         <div class="message-output">
                             <output class="error-message" id="email-error-message"></output>
@@ -73,7 +73,7 @@
                     
                     <div class="form-field">
                         <label class="field-label" for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="[\w\s]*" required>
+                        <input type="text" class="field-input" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="[\w\s]*" required>
                         <div class="message-output">
                             <output class="error-message" id="subject-error-message"></output>
                         </div>
