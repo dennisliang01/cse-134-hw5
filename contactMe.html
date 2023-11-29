@@ -73,7 +73,7 @@
                     
                     <div class="form-field">
                         <label class="field-label" for="subject">Subject</label>
-                        <input type="text" class="field-input" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="[\w\s]*" required>
+                        <input type="text" class="field-input" id="subject" name="subject" placeholder="Your Email Subject"   maxlength="500" pattern="^[\w\s]*" required>
                         <div class="message-output">
                             <output class="error-message" id="subject-error-message"></output>
                         </div>
@@ -81,7 +81,7 @@
 
                     <div class="form-field">
                         <label class="field-label" for="comments">Comments</label>
-                        <textarea id="comments" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" pattern="[\w\s]*$" required></textarea>
+                        <textarea id="comments" name="comments" rows="10" cols="60" placeholder="Your Comments" maxlength="1000" required></textarea>
                         
                         <div class="message-output">
                             <output class="error-message" id="comments-error-message"></output>

@@ -5,8 +5,7 @@ contactForm.noValidate = true;
 
 contactForm.addEventListener("submit", validateForm);
 
-function validateForm(event) {
-    console.log("submit");
+async function validateForm(event) {
 
     event.preventDefault();
 
@@ -61,7 +60,7 @@ function validateForm(event) {
         const formData = new FormData(event.target);
         formData.append('form_errors', JSON.stringify(form_errors));
 
-        fetch("https://httpbin.org/post", {
+        await fetch("https://httpbin.org/post", {
             method: "post",
             body: formData,
         });
@@ -77,8 +76,10 @@ const form_errors = [];
 
 function recordError(input, errorType) {
     let error = {
-        "input": errorType + ": " + input.value
+        errorType: errorType,
+        input: input.value,
     }
+
     form_errors.push(error);
 }
 
