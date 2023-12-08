@@ -51,35 +51,18 @@
         </header>
         <main class="experiment-page">
             <h2 class="page-title">Experiment Page</h2>
-            <!-- Code tag demo showing code format -->
-            <!-- Figure demo showing pciture and caption -->
-            <section>
-                <h3>Figure, Figcaption Tag, and Wider Gamut Color Use (color() and color-mix())</h3>
-                <figure>
-                    <img src="assets/images/fallenStar.jpg" alt="UCSD Fallen Star Building Image" width=300>
-                    <figcaption>Fig.1 - Fallen Star, UCSD Stuart Collection.</figcaption>
-                </figure>
-            </section>
-            <section>
-                <h3>has() selector Demo</h3>
-                <div class="test-has-selector">
-                    <p>This is a test.</p>
-                </div>
-                <div class="test-has-selector">
-                    <h5>This is a test</h5>
-                </div>
-            </section>
-            <!-- Simple demo of button tag without JS linking -->
-            <section>
-                <h3>Button Tag</h3>
-                <button type="button">Click Me!</button>
-            </section>
-            <section id="code-upside-down">
-                <h3>Code Tag and Transform CSS</h3>
-                <code>
-                    System.out.println("Hello World")
-                </code>
-            </section>
+
+            <!--  Star unicode &#11088 -->
+            <rating-widget>
+                <form action="https://httpbin.org/post" method="POST">
+                    <label for="rating">How satisfied are you?</label>
+                    <input type="hidden" name="question" value="How satisfied are you?">
+                    <input type="hidden" name="sentBy" value="HTML">
+                    <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </rating-widget>
+
         </main>
         <!-- Contact info footer section -->
         <footer>
@@ -92,5 +75,6 @@
             <p>Copyright &copy; 2023 Dennis Liang. All Rights Reserved.</p>
         </footer>
     <script src="./assets/js/theme.js"></script>
+    <script src="./assets/js/ratingWidget.js"></script>
     </body>
 </html>

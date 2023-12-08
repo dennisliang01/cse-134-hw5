@@ -488,33 +488,6 @@ input:focus {
     margin: 1rem 3rem;
 }
 
-#code-upside-down {
-    transform: rotate(0.5turn);
-    display: block;
-}
-
-figcaption {
-    /* Color and background-color with fallback */
-    color: pink;
-    /* gives css validation error due to no full current adopation */
-    color: color(display-p3 0 1 30);
-    background-color: grey;
-    /* gives css validation error due to no full current adopation */
-    background-color: color-mix(in srgb, #34c9eb 50%, white);
-    display: inline-block;
-}
-
-.test-has-selector {
-    border: solid black;
-    margin-bottom: 1rem;
-}
-
-/* gives css validation error due to no full current adopation */
-.test-has-selector:has(p) {
-    background-color: green;
-}
-
-
 /* Tablet or Restricitive Laptop Settings */
 /* Using iPad Air as reference */
 @media screen and (max-width: 900px) {
@@ -716,7 +689,8 @@ figcaption {
     .experiment-page {
         height: 100%;
     }
-
-
-
 }
+
+
+
+
