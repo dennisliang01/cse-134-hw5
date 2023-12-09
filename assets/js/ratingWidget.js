@@ -1,4 +1,9 @@
 
+
+const RATING_MESSAGE_BOUND = 0.8;
+const MAX_STARS = 10;
+const MIN_STARS = 3;
+
 class RatingWidget extends HTMLElement {
 
     constructor() {
@@ -63,15 +68,15 @@ class RatingWidget extends HTMLElement {
         let ratingBox = this.shadowRoot.getElementById("rating-box");
 
         let starNum = document.getElementById("rating").getAttribute("max");
-        console.log(starNum);
+        // console.log(starNum);
 
-        if (starNum > 10) {
-            console.log("replacing %d with 10", starNum);
-            starNum = 10;
+        if (starNum > MAX_STARS) {
+            console.log("Max of 10 stars exceeded. Replacing %d stars with 10 stars", starNum);
+            starNum = MAX_STARS;
 
-        } else if (starNum < 3) {
-            console.log("replacing %d with 3", starNum);
-            starNum = 3;
+        } else if (starNum < MIN_STARS) {
+            console.log("Minimum of 3 stars not reached. Replacing %d with 3 stars", starNum);
+            starNum = MIN_STARS;
         }
         
         for (let i = 0; i < starNum; i++) {
@@ -110,12 +115,11 @@ class RatingWidget extends HTMLElement {
 
 
     selectFunction(event) {
-        console.log("I was clicked");
         let number = event.target.getAttribute("star-num");
         // Accounting for star number offset
         // Need parseInt since number come in a string
         let rating = parseInt(number) + 1;
-        console.log("%d rating selected", rating);
+        // console.log("%d rating selected", rating);
         let ratingBox = this.getElementById('rating-box');
         
         let id = event.target.id;
@@ -126,16 +130,27 @@ class RatingWidget extends HTMLElement {
             }
 
             let message = document.createElement("p");
-            if (rating >= star_list.length * .8) {
+            if (rating >= star_list.length * RATING_MESSAGE_BOUND) {
                 message.innerText = "Thanks for " +  rating + " star rating!";
             } else {
-                message.innerText = "Thanks for your feedback of " +  rating + " star. We'll try to do better!";
+                message.innerText = "Thanks for your feedback of " +  rating + " stars. We'll try to do better!";
             }
             ratingBox.appendChild(message);
 
-            let request = {
-                "method": "post"
-            }
+            let formHeader = new Headers();
+            formHeader.append('X-Sent-By', 'JavaScript');
+
+            let formBody = new FormData();
+            formBody.append("question", "How satisfied are you?");
+            formBody.append("rating", rating);
+            formBody.append("sentBy", "JS");
+
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                headers: formHeader,
+                body: formBody,
+            })
+            .then((response) => response.json()).then(console.log); 
         }
 
 

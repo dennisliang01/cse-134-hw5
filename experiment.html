@@ -15,6 +15,14 @@
             .testDiv {
                 border: 1px solid;
             }
+
+            :root {
+                --star-selected-color: #FFD700;
+                --star-unselected-color: #FFFFFF;
+            }
+            
+                
+                
         </style>
     </head>
     <body id="body-theme">
@@ -51,14 +59,14 @@
         </header>
         <main class="experiment-page">
             <h2 class="page-title">Experiment Page</h2>
-
+            
             <!--  Star unicode &#11088 -->
             <rating-widget>
                 <form action="https://httpbin.org/post" method="POST">
                     <label for="rating">How satisfied are you?</label>
                     <input type="hidden" name="question" value="How satisfied are you?">
                     <input type="hidden" name="sentBy" value="HTML">
-                    <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
+                    <input type="number" id="rating" name="rating" min="1" max="100" value="0" required>
                     <button type="submit">Submit</button>
                 </form>
             </rating-widget>
