@@ -45,7 +45,7 @@ class RatingWidget extends HTMLElement {
                 span {
                     padding: 1rem;
                     font-size: 2rem;
-                    color: #FFD700;
+                    color: var(--star-unselected-color, red);
                     cursor: pointer;
                 }
             `;
@@ -96,8 +96,10 @@ class RatingWidget extends HTMLElement {
             for(let i = 0; i < star_list.length; i++) {
                 if(i <= number) {
                     star_list[i].innerHTML = "&#9733";
+                    star_list[i].style.color = "var(--star-selected-color, yellow)";
                 } else {
                     star_list[i].innerHTML = "&#9734";
+                    star_list[i].style.color = "var(--star-unselected-color, red)";
                 }
             }
         }
@@ -109,6 +111,7 @@ class RatingWidget extends HTMLElement {
             let star_list = this.querySelectorAll('span');
             for(let i = 0; i < star_list.length; i++) {
                 star_list[i].innerHTML = "&#9734";
+                star_list[i].style.color = "var(--star-unselected-color, red)";
             }
         }
     }
