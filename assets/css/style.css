@@ -488,9 +488,18 @@ input:focus {
     margin: 1rem 3rem;
 }
 
+.experiment-page section{
+    border: solid grey;
+    margin: 3rem;
+}
+
 .experiment-page h3 {
     text-align: center;
     font-size: 2rem;
+}
+
+.experiment-page p {
+    text-align: center;
 }
 
 /* Tablet or Restricitive Laptop Settings */
@@ -592,7 +601,9 @@ input:focus {
         margin: 3rem;
     }
 
-
+    .experiment-page section {
+        border: none;
+    }
 
     .email-form textarea {
         width: 100%;

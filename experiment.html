@@ -59,17 +59,29 @@
         </header>
         <main class="experiment-page">
             <h2 class="page-title">Experiment Page</h2>
-            <h3>Rating Widget</h3>
-            <!--  Star unicode &#11088 -->
-            <rating-widget>
-                <form action="https://httpbin.org/post" method="POST">
-                    <label for="rating">How satisfied are you?</label>
-                    <input type="hidden" name="question" value="How satisfied are you?">
-                    <input type="hidden" name="sentBy" value="HTML">
-                    <input type="number" id="rating" name="rating" min="1" max="10" value="0" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </rating-widget>
+            <section>
+                <h3>Rating Widget</h3>
+                <!--  Star unicode &#11088 -->
+                <rating-widget>
+                    <form action="https://httpbin.org/post" method="POST">
+                        <label for="rating">How satisfied are you?</label>
+                        <input type="hidden" name="question" value="How satisfied are you?">
+                        <input type="hidden" name="sentBy" value="HTML">
+                        <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </rating-widget>
+            </section>
+            
+            <section>
+                <h3>Current Weather</h3>
+                <weather-widget>
+                    <!-- Geisel Library Coordinates (Latitude, Longitude): (32.881118965355164,-117.23752324591422) -->
+                    <p>Current Weather Conditions Unavailable</p>
+                </weather-widget>
+            </section>
+            
+
 
         </main>
         <!-- Contact info footer section -->
@@ -84,5 +96,6 @@
         </footer>
     <script src="./assets/js/theme.js"></script>
     <script src="./assets/js/ratingWidget.js"></script>
+    <script src="./assets/js/weatherWidget.js"></script>
     </body>
 </html>

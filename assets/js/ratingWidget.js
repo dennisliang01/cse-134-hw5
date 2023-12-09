@@ -15,7 +15,7 @@ class RatingWidget extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log("Connected");
+        console.log("Connected Rating Widget");
         let styleTag = document.createElement("style");
         // Using back tick, not single quote for multi line assignment
         styleTag.innerHTML = `
@@ -39,13 +39,12 @@ class RatingWidget extends HTMLElement {
 
         this.shadowRoot.addEventListener("mouseover", this.hoverFunction);
         this.shadowRoot.addEventListener("mouseout", this.resetFunction);
-
         this.shadowRoot.addEventListener("click", this.selectFunction);
 
     }
 
     disconnectedCallback() {
-        console.log("Disconnected");
+        console.log("Disconnected Rating Widget");
     }
 
     initializeRatingBox() {
@@ -139,14 +138,7 @@ class RatingWidget extends HTMLElement {
             })
             .then((response) => response.json()).then(console.log); 
         }
-
-
-
-        
     }
-
-    
-
 }
 
 customElements.define('rating-widget', RatingWidget);
