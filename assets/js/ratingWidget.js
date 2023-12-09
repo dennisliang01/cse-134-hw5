@@ -41,6 +41,7 @@ class RatingWidget extends HTMLElement {
                     padding: 1rem;
                     font-size: 2rem;
                     color: #FFD700;
+                    cursor: pointer;
                 }
             `;
         this.shadowRoot.append(styleTag);
@@ -50,7 +51,7 @@ class RatingWidget extends HTMLElement {
         this.shadowRoot.addEventListener("mouseover", this.hoverFunction);
         this.shadowRoot.addEventListener("mouseout", this.resetFunction);
 
-        this.shadowRoot.addEventListener("click", this.clickFunction);
+        this.shadowRoot.addEventListener("click", this.selectFunction);
 
     }
 
@@ -108,10 +109,38 @@ class RatingWidget extends HTMLElement {
     }
 
 
-    clickFunction() {
+    selectFunction(event) {
         console.log("I was clicked");
+        let number = event.target.getAttribute("star-num");
+        // Accounting for star number offset
+        // Need parseInt since number come in a string
+        let rating = parseInt(number) + 1;
+        console.log("%d rating selected", rating);
+        let ratingBox = this.getElementById('rating-box');
+        
+        let id = event.target.id;
+        if(id == "star") {
+            let star_list = this.querySelectorAll('span');
+            for(let i = 0; i < star_list.length; i++) {
+                star_list[i].remove();
+            }
+
+            let message = document.createElement("p");
+            if (rating >= star_list.length * .8) {
+                message.innerText = "Thanks for " +  rating + " star rating!";
+            } else {
+                message.innerText = "Thanks for your feedback of " +  rating + " star. We'll try to do better!";
+            }
+            ratingBox.appendChild(message);
+
+            let request = {
+                "method": "post"
+            }
+        }
 
 
+
+        
     }
 
     
