@@ -488,6 +488,11 @@ input:focus {
     margin: 1rem 3rem;
 }
 
+.experiment-page h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
 /* Tablet or Restricitive Laptop Settings */
 /* Using iPad Air as reference */
 @media screen and (max-width: 900px) {

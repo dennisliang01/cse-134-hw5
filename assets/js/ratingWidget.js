@@ -1,5 +1,3 @@
-
-
 const RATING_MESSAGE_BOUND = 0.8;
 const MAX_STARS = 10;
 const MIN_STARS = 3;
@@ -9,19 +7,11 @@ class RatingWidget extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-
-
         
-        let heading = document.createElement("h3");
-        heading.setAttribute("id", "heading");
         let ratingBox = document.createElement("div");
         ratingBox.id = "rating-box";
 
-        heading.innerText = "Rating Widget";
-    
-        this.shadowRoot.appendChild(heading);
         this.shadowRoot.appendChild(ratingBox);
-        heading = null;
     }
 
     connectedCallback() {
@@ -29,12 +19,6 @@ class RatingWidget extends HTMLElement {
         let styleTag = document.createElement("style");
         // Using back tick, not single quote for multi line assignment
         styleTag.innerHTML = `
-                h3 {
-                    text-align: center;
-                    font-size: 2rem;
-                    margin-bottom: 0;
-                }
-
                 div {
                     display: flex;
                     justify-content: center;
