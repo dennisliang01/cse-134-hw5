@@ -489,13 +489,13 @@ input:focus {
 }
 
 .experiment-page section{
-    border: solid grey;
     margin: 3rem;
+    justify-content: center;
 }
 
 .experiment-page h3 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .experiment-page p {
@@ -601,18 +601,16 @@ input:focus {
         margin: 3rem;
     }
 
-    .experiment-page section {
-        border: none;
+    .experiment-page h2 {
+        font-size: 2rem;
+        line-height: 1rem;
     }
 
     .email-form textarea {
         width: 100%;
     }
 
-    .experiment-page h2 {
-        font-size: 2rem;
-        line-height: 1rem;
-    }
+    
 
 }
 

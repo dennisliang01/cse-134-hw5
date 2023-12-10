@@ -1,5 +1,6 @@
 class WeatherWidget extends HTMLElement {
 
+    
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
@@ -34,19 +35,19 @@ class WeatherWidget extends HTMLElement {
         let styleTag = document.createElement("style");
         // Using back tick, not single quote for multi line assignment
         styleTag.innerHTML = `
-
                 #weather-box {
                     display: flex;
-                    border: solid red;
                     height: 30vh;
-                    background-color: #5d92ff;
+                    background-color: #00A4E4;
+                    color: white;
+                    align-items: center;
+                    border-radius: 30px;
                 }
 
                 #weather-icon-box {
                     display: flex;
                     width: 30%;
-                    float: left;
-                    border: solid blue;
+                    margin-left: 7.5rem;
                 }
 
                 #weather-icon-box img {
@@ -58,7 +59,6 @@ class WeatherWidget extends HTMLElement {
                 #forecast-box {
                     display: flex;
                     width: 70%;
-                    border: solid green;
                     flex-direction: column;
                     justify-content: center;
                     text-align: center;
@@ -67,18 +67,20 @@ class WeatherWidget extends HTMLElement {
 
                 #general-forecast {
                     height: 50%;
-                    border: solid purple;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
+                    margin-bottom: 1rem;
+                    justify-content: center;
                 }
 
                 #other-forecast {
                     height: 50%;
-                    border: solid yellow;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
+                    line-height: 2.5rem;
+                    justify-content: center;
+
+
                 }
             `;
         this.shadowRoot.append(styleTag);
@@ -99,18 +101,52 @@ class WeatherWidget extends HTMLElement {
                 let windDirection = weather.windDirection;
                 let relativeHumidityValue = weather.relativeHumidity.value;
                 let relativeHumidityUnit = weather.relativeHumidity.unitCode;
-                console.log("Current Temp is " + temperature);
+
+                let weatherIcon = document.createElement("img");
+                switch(shortForecast.toLowerCase()) {
+                    case "sunny":
+                        weatherIcon.src = "./assets/icons/sunny.png"
+                        weatherIcon.alt = "Sunny Icon";
+                        break;
+                    case "partly cloudy":
+                        weatherIcon.src = "./assets/icons/partlyCloudy.png"
+                        weatherIcon.alt = "Partly Cloudy Icon";
+                        break;
+                    case "cloudy":
+                        weatherIcon.src = "./assets/icons/cloudy.png"
+                        weatherIcon.alt = "Cloudy Icon";
+                        break;
+                    case "overcast":
+                        weatherIcon.src = "./assets/icons/cloudy.png"
+                        weatherIcon.alt = "Overcast Icon";
+                        break;
+                    case "rain":
+                        weatherIcon.src = "./assets/icons/rain.png"
+                        weatherIcon.alt = "Rain";
+                        break;
+                    case "thunder":
+                        weatherIcon.src = "./assets/icons/thunder.png"
+                        weatherIcon.alt = "Thunder Icon";
+                        break;
+                    case "snow":
+                        weatherIcon.src = "./assets/icons/snow.png"
+                        weatherIcon.alt = "Snow Icon";
+                        break;
+                    default:
+                        weatherIcon.src = "./assets/icons/unknownWeather.png"
+                        weatherIcon.alt = "Unknown Weather";
+                        
+                }
+
                 let weatherIconBox = this.shadowRoot.getElementById("weather-icon-box");
-                weatherIconBox.innerHTML = `
-                    <img src="./assets/icons/sunny.svg" alt="sunny icon">
-                `;
+                weatherIconBox.appendChild(weatherIcon);
+
                 let generalForecast = this.shadowRoot.getElementById("general-forecast");
                 generalForecast.innerHTML = shortForecast + " " + temperature  + " &deg" + temperatureUnit;
 
                 let otherForecast = this.shadowRoot.getElementById("other-forecast");
-                otherForecast.innerHTML = windSpeed + " " + windDirection + " "
-                    + relativeHumidityValue + relativeHumidityUnit;
-                
+                otherForecast.innerText = "Wind: " + windSpeed + " " + windDirection + "\n"
+                    + "Humidity: " + relativeHumidityValue + "%";
                 
 
             })
