@@ -38,31 +38,32 @@ class WeatherWidget extends HTMLElement {
                 #weather-box {
                     display: flex;
                     height: 30vh;
+                    width: 50vw;
                     background-color: #00A4E4;
                     color: white;
                     align-items: center;
                     border-radius: 30px;
+                    text-align: center;
+                    margin: auto;
                 }
 
                 #weather-icon-box {
-                    display: flex;
-                    width: 30%;
-                    margin-left: 7.5rem;
+                    width: 50%;
                 }
 
                 #weather-icon-box img {
-                    height: 75%;
-                    width: 75%;
-                    margin: auto;
+                    width: 10rem;
+                    height: auto;
                 }
 
                 #forecast-box {
                     display: flex;
-                    width: 70%;
+                    width: 50%;
                     flex-direction: column;
                     justify-content: center;
                     text-align: center;
                     font-size: 2rem;
+
                 }
 
                 #general-forecast {
@@ -84,8 +85,6 @@ class WeatherWidget extends HTMLElement {
                 }
             `;
         this.shadowRoot.append(styleTag);
-
-        
 
         fetch("https://api.weather.gov/gridpoints/SGX/55,22/forecast/hourly")
             .then(response => response.json())
@@ -147,8 +146,6 @@ class WeatherWidget extends HTMLElement {
                 let otherForecast = this.shadowRoot.getElementById("other-forecast");
                 otherForecast.innerText = "Wind: " + windSpeed + " " + windDirection + "\n"
                     + "Humidity: " + relativeHumidityValue + "%";
-                
-
             })
             .catch(error => {
                 console.log(error);

@@ -24,6 +24,8 @@ class RatingWidget extends HTMLElement {
                     justify-content: center;
                     margin: 0;
                     padding: 0;
+                    background-color: lightgrey;
+                    border-radius: 20px;
                 }
 
                 span {
