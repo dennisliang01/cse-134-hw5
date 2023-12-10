@@ -100,6 +100,11 @@ class WeatherWidget extends HTMLElement {
                 let windDirection = weather.windDirection;
                 let relativeHumidityValue = weather.relativeHumidity.value;
                 let relativeHumidityUnit = weather.relativeHumidity.unitCode;
+                
+                if (!isDaytime) {
+                    let weatherBox = this.shadowRoot.getElementById("weather-box");
+                    weatherBox.style.backgroundColor = "#16244b";
+                }
 
                 let weatherIcon = document.createElement("img");
                 switch(shortForecast.toLowerCase()) {
@@ -130,6 +135,16 @@ class WeatherWidget extends HTMLElement {
                     case "snow":
                         weatherIcon.src = "./assets/icons/snow.png"
                         weatherIcon.alt = "Snow Icon";
+                        break;
+                    case "mostly clear":
+                        if (!isDaytime) {
+                            weatherIcon.src = "./assets/icons/nightClear.png"
+                            weatherIcon.alt = "Mostly Clear Icon";
+                        } else {
+                            weatherIcon.src = "./assets/icons/sunny.png"
+                            weatherIcon.alt = "Sunny Icon";
+                        }
+                        
                         break;
                     default:
                         weatherIcon.src = "./assets/icons/unknownWeather.png"
