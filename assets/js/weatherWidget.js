@@ -107,49 +107,39 @@ class WeatherWidget extends HTMLElement {
                 }
 
                 let weatherIcon = document.createElement("img");
-                switch(shortForecast.toLowerCase()) {
-                    case "sunny":
+                let shortForecastLowerCase = shortForecast.toLowerCase();
+
+                shortForecastLowerCase = "clear";
+                if (shortForecastLowerCase.includes("sunny")){
+                    weatherIcon.src = "./assets/icons/sunny.png"
+                    weatherIcon.alt = "Sunny Icon";
+                } else if (shortForecastLowerCase.includes("cloudy") || 
+                    shortForecastLowerCase.includes("overcast")) {
+                    weatherIcon.src = "./assets/icons/cloudy.png"
+                    weatherIcon.alt = "Cloudy Icon";
+                } else if (shortForecastLowerCase.includes("rain")) {
+                    weatherIcon.src = "./assets/icons/rain.png"
+                    weatherIcon.alt = "Rain";
+                } else if (shortForecastLowerCase.includes("thunder")) {
+                    weatherIcon.src = "./assets/icons/thunder.png"
+                    weatherIcon.alt = "Thunder Icon";
+                } else if (shortForecastLowerCase.includes("snow")) {
+                    weatherIcon.src = "./assets/icons/snow.png"
+                    weatherIcon.alt = "Snow Icon";
+                } else if (shortForecastLowerCase.includes("wind")) {
+                    weatherIcon.src = "./assets/icons/windy.png"
+                    weatherIcon.alt = "Wind Icon";
+                } else if (shortForecastLowerCase.includes("clear")) {
+                    if (!isDaytime) {
+                        weatherIcon.src = "./assets/icons/nightClear.png"
+                        weatherIcon.alt = "Mostly Clear Icon";
+                    } else {
                         weatherIcon.src = "./assets/icons/sunny.png"
                         weatherIcon.alt = "Sunny Icon";
-                        break;
-                    case "partly cloudy":
-                        weatherIcon.src = "./assets/icons/partlyCloudy.png"
-                        weatherIcon.alt = "Partly Cloudy Icon";
-                        break;
-                    case "cloudy":
-                        weatherIcon.src = "./assets/icons/cloudy.png"
-                        weatherIcon.alt = "Cloudy Icon";
-                        break;
-                    case "overcast":
-                        weatherIcon.src = "./assets/icons/cloudy.png"
-                        weatherIcon.alt = "Overcast Icon";
-                        break;
-                    case "rain":
-                        weatherIcon.src = "./assets/icons/rain.png"
-                        weatherIcon.alt = "Rain";
-                        break;
-                    case "thunder":
-                        weatherIcon.src = "./assets/icons/thunder.png"
-                        weatherIcon.alt = "Thunder Icon";
-                        break;
-                    case "snow":
-                        weatherIcon.src = "./assets/icons/snow.png"
-                        weatherIcon.alt = "Snow Icon";
-                        break;
-                    case "mostly clear":
-                        if (!isDaytime) {
-                            weatherIcon.src = "./assets/icons/nightClear.png"
-                            weatherIcon.alt = "Mostly Clear Icon";
-                        } else {
-                            weatherIcon.src = "./assets/icons/sunny.png"
-                            weatherIcon.alt = "Sunny Icon";
-                        }
-                        
-                        break;
-                    default:
-                        weatherIcon.src = "./assets/icons/unknownWeather.png"
-                        weatherIcon.alt = "Unknown Weather";
-                        
+                    }
+                } else {
+                    weatherIcon.src = "./assets/icons/unknownWeather.png"
+                    weatherIcon.alt = "Unknown Weather";
                 }
 
                 let weatherIconBox = this.shadowRoot.getElementById("weather-icon-box");
