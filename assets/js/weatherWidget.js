@@ -109,7 +109,6 @@ class WeatherWidget extends HTMLElement {
                 let weatherIcon = document.createElement("img");
                 let shortForecastLowerCase = shortForecast.toLowerCase();
 
-                shortForecastLowerCase = "clear";
                 if (shortForecastLowerCase.includes("sunny")){
                     weatherIcon.src = "./assets/icons/sunny.png"
                     weatherIcon.alt = "Sunny Icon";
